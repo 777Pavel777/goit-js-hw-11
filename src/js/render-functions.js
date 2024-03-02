@@ -1,3 +1,5 @@
+import { galleryListElem, loaderElem } from '../main';
+
 export function createMarkup(images) {
   const markupImg = images
     .map(
@@ -26,4 +28,6 @@ export function createMarkup(images) {
       }
     )
     .join('');
+  galleryListElem.innerHTML = markupImg;
+  loaderElem.classList.remove('loader');
 }
