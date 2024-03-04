@@ -9,14 +9,14 @@ export function getPhotos() {
   const resultSearch = true;
   const searchLink = `${baseUrl}?key=${key}&q=${query}&image_type=${typeImg}&orientation=${orientationImg}&safesearch=${resultSearch}`;
 
-  // return fetch(searchLink)
-  //   .then(res => {
-  //     if (!res.ok) {
-  //       throw new Error(`Problem ${res.status}`);
-  //     }
-  //     return res.json();
-  //   })
-  //   .catch(error => {
-  //     console.log(error);
-  //   });
+  return fetch(searchLink)
+    .then(res => {
+      if (!res.ok) {
+        throw new Error(`Problem ${res.status}`);
+      }
+      return res.json();
+    })
+    .catch(error => {
+      console.log(error);
+    });
 }
